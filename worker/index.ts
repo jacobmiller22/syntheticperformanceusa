@@ -17,7 +17,7 @@ export interface Env {
   DEALER_LOCATION?: string;
 }
 
-const DEFAULT_ZO = "1234567";
+const DEFAULT_ZO = "31977476";
 
 // Pre-mapped high-converting destinations on amsoil.com
 const ROUTE_MAP: Record<string, string> = {

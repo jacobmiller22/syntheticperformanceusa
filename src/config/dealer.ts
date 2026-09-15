@@ -22,7 +22,7 @@ export interface DealerConfig {
 }
 
 export const dealerConfig: DealerConfig = {
-  zoNumber: "1234567", // Placeholder ZO number - easily updated via env var or config
+  zoNumber: "31977476",
   dealerName: "Brandon Miller",
   businessName: "Brandon's Synthetic Oil",
   title: "AMSOIL Authorized Independent Dealer",

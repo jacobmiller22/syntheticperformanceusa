@@ -17,7 +17,7 @@ not_found_handling = "404-page"
 
 # Dealer Variables (Dynamically editable anytime without rebuilding frontend)
 [vars]
-DEALER_ZO = "1234567"
+DEALER_ZO = "31977476"
 DEALER_NAME = "Brandon Miller"
 DEALER_PHONE = "(555) 321-4567"
 DEALER_EMAIL = "brandon@brandonsoil.jacobmiller22.com"
