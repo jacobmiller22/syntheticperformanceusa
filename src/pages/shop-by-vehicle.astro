@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VehicleGrid from '../components/VehicleGrid.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import { dealerConfig } from '../config/dealer';
+---
+
+<Layout 
+  title={`Shop AMSOIL by Vehicle & Equipment | ${dealerConfig.businessName}`}
+  description="Lookup exact AMSOIL synthetic lubricants, oil capacities, and filter numbers for your car, truck, motorcycle, ATV, boat, or diesel fleet."
+>
+  <div class="bg-gradient-to-b from-slate-950 to-slate-900 py-12 lg:py-16 border-b border-slate-800 text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="inline-block text-xs font-bold uppercase tracking-widest text-red-500 mb-2">
+        Official Interactive Database
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-['Montserrat']">
+        Shop AMSOIL by Vehicle &amp; Equipment
+      </h1>
+      <p class="text-sm sm:text-base text-slate-400 mt-4 leading-relaxed">
+        AMSOIL formulates tailored synthetic lubricants for every engine type. Use our equipment finder or the official lookup tool to find exact capacities and verified filter part numbers.
+      </p>
+      
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          href="/go/lookup"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider shadow-lg shadow-red-950/50 transition-all hover:scale-105"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <span>Launch Vehicle Lookup Tool &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <VehicleGrid />
+  <TrustBadges />
+</Layout>

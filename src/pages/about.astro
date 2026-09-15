@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import { dealerConfig } from '../config/dealer';
+---
+
+<Layout 
+  title={`About ${dealerConfig.dealerName} | Authorized AMSOIL Dealer`}
+  description={`Learn about ${dealerConfig.dealerName}, Independent Authorized AMSOIL Dealer. Personal product recommendations, wholesale pricing, and factory direct shipping.`}
+>
+  <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 border-b border-slate-800 text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="inline-block text-xs font-bold uppercase tracking-widest text-red-500 mb-2">
+        Independent Authorized Dealer
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-['Montserrat']">
+        About {dealerConfig.dealerName}
+      </h1>
+      <p class="text-sm sm:text-base text-slate-400 mt-3 leading-relaxed">
+        Providing personal lubrication expertise, wholesale savings, and factory-direct service to motorists, racers, and commercial fleets across the United States and Canada.
+      </p>
+    </div>
+  </div>
+
+  <section class="py-16 bg-slate-950 border-b border-slate-800">
+    <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        
+        <!-- Story / Mission -->
+        <div class="md:col-span-7 space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed">
+          <h2 class="text-2xl font-bold text-white font-['Montserrat']">
+            Committed to Superior Lubrication
+          </h2>
+          <p>
+            As an Authorized Independent AMSOIL Dealer (ZO #{dealerConfig.zoNumber}), my goal is to help you protect your investment in your vehicles and equipment with the world's most advanced synthetic oils, transmission fluids, and nanofiber filters.
+          </p>
+          <p>
+            Whether you are changing oil in your personal daily driver, outfitting an off-road racing rig, maintaining a marine boat motor, or managing a fleet of commercial diesel trucks, AMSOIL formulates purpose-built fluids that eliminate wear and reduce operating expenses.
+          </p>
+          <p>
+            All products ordered through this site are billed directly by AMSOIL INC. and dispatched from the nearest of 13 regional distribution centers to ensure the fastest delivery directly to your door.
+          </p>
+
+          <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-4">
+            <a 
+              href="/go/lookup" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-colors"
+            >
+              Lookup Your Vehicle &rarr;
+            </a>
+            <a 
+              href="/preferred-customer" 
+              class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3 rounded-xl text-xs transition-colors border border-slate-700"
+            >
+              Save 25% Today
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="md:col-span-5 bg-slate-900 rounded-2xl border border-slate-800 p-6 space-y-4">
+          <h3 class="text-lg font-bold text-white font-['Montserrat'] border-b border-slate-800 pb-3">
+            Dealer Contact Info
+          </h3>
+          
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div>
+              <div class="text-slate-500 uppercase tracking-wider text-[11px] font-bold">Authorized Dealer</div>
+              <div class="text-white font-semibold text-base">{dealerConfig.dealerName}</div>
+              <div class="text-slate-400">ZO #{dealerConfig.zoNumber}</div>
+            </div>
+
+            <div>
+              <div class="text-slate-500 uppercase tracking-wider text-[11px] font-bold">Direct Phone</div>
+              <a href={`tel:${dealerConfig.phone}`} class="text-red-400 font-semibold hover:underline">{dealerConfig.phone}</a>
+            </div>
+
+            <div>
+              <div class="text-slate-500 uppercase tracking-wider text-[11px] font-bold">Email</div>
+              <a href={`mailto:${dealerConfig.email}`} class="text-red-400 font-semibold hover:underline">{dealerConfig.email}</a>
+            </div>
+
+            <div>
+              <div class="text-slate-500 uppercase tracking-wider text-[11px] font-bold">Service Territory</div>
+              <div class="text-slate-300">{dealerConfig.location}</div>
+            </div>
+
+            <div>
+              <div class="text-slate-500 uppercase tracking-wider text-[11px] font-bold">Orders &amp; Shipping</div>
+              <div class="text-slate-300">Fulfilled factory-direct by AMSOIL INC. Superior, WI</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <TrustBadges />
+</Layout>

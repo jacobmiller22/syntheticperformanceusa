@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import { dealerConfig } from '../config/dealer';
+
+const dealerBenefits = [
+  {
+    title: "Catalog & Web Commissions",
+    desc: "When customers order on amsoil.com using your dealer number, AMSOIL handles the payment, fulfillment, and shipping—while you earn commissions and volume credits.",
+    icon: "🌐"
+  },
+  {
+    title: "Retail Profit Margins",
+    desc: "Purchase products at dealer wholesale prices and sell them directly to local motorists, racers, and enthusiasts at suggested retail prices for immediate cash margins.",
+    icon: "💵"
+  },
+  {
+    title: "Commercial Fleet Accounts",
+    desc: "Register businesses (trucking fleets, landscapers, construction, farms). Earn steady monthly commissions on repeat orders of 55-gallon drums, pails, and cases.",
+    icon: "🚛"
+  },
+  {
+    title: "Retail Account Placements",
+    desc: "Place AMSOIL products on the shelves of local auto parts stores, hardware stores, powersports dealerships, and repair shops with ongoing commission on all reorders.",
+    icon: "🏬"
+  }
+];
+---
+
+<Layout 
+  title={`Become an AMSOIL Independent Dealer | ${dealerConfig.businessName}`}
+  description="Start your own AMSOIL dealership. Earn commissions on online sales, commercial accounts, and retail stores. Low startup cost with no inventory quotas."
+>
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 border-b border-slate-800 text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="inline-flex items-center space-x-2 bg-red-600/20 border border-red-600/40 rounded-full px-3 py-1 text-xs text-red-400 font-bold uppercase tracking-wider mb-4">
+        <span>💼</span>
+        <span>Independent Business Opportunity</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-['Montserrat'] leading-tight">
+        Build Your Own AMSOIL Dealership
+      </h1>
+      <p class="text-sm sm:text-base text-slate-400 mt-4 leading-relaxed">
+        Join the AMSOIL dealer network. Operate your own business, set your own schedule, and earn commissions by helping drivers, businesses, and motorsport teams run the world's best lubricants.
+      </p>
+      
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          href="/go/dealer"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-red-600 hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl text-sm uppercase tracking-wider shadow-lg shadow-red-950/50 transition-all hover:scale-105"
+        >
+          Register as an AMSOIL Dealer &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefits Grid -->
+  <section class="py-16 bg-slate-900/60 border-b border-slate-800">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-['Montserrat']">
+          Four Ways to Earn Income
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">
+          AMSOIL provides a versatile business model that lets you build your dealership part-time or full-time.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {dealerBenefits.map(b => (
+          <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 flex items-start space-x-4">
+            <div class="text-3xl p-3 bg-slate-900 rounded-xl border border-slate-800 shrink-0">
+              {b.icon}
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white font-['Montserrat']">{b.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">{b.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Startup Summary -->
+  <section class="py-16 bg-slate-950 border-b border-slate-800">
+    <div class="container mx-auto px-4 lg:px-8 max-w-3xl text-center space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Montserrat']">
+        Why Start an AMSOIL Dealership?
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left pt-4">
+        <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+          <div class="text-red-500 font-bold text-lg mb-1">Under $50</div>
+          <div class="text-xs text-slate-400">Low-risk startup investment. Includes your full Dealer Starter Kit and digital tools.</div>
+        </div>
+        <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+          <div class="text-red-500 font-bold text-lg mb-1">No Inventory Mandate</div>
+          <div class="text-xs text-slate-400">You do not need to stockpile inventory in your garage. AMSOIL dropships directly.</div>
+        </div>
+        <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+          <div class="text-red-500 font-bold text-lg mb-1">Lifetime Accounts</div>
+          <div class="text-xs text-slate-400">Customers you register are tied to your dealer ID permanently for all future reorders.</div>
+        </div>
+      </div>
+
+      <div class="pt-6">
+        <a 
+          href="/go/dealer" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-wider shadow-lg"
+        >
+          Start Your Dealership on AMSOIL.com &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <TrustBadges />
+</Layout>

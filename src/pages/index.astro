@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import VehicleGrid from '../components/VehicleGrid.astro';
+import PreferredCustomerCard from '../components/PreferredCustomerCard.astro';
+import CategoryGrid from '../components/CategoryGrid.astro';
+import WholesaleB2B from '../components/WholesaleB2B.astro';
+import { dealerConfig } from '../config/dealer';
+---
+
+<Layout 
+  title={`${dealerConfig.businessName} | Authorized AMSOIL Dealer | Save Up to 25%`}
+  description="Buy factory-direct AMSOIL synthetic oil, transmission fluids, and filters with wholesale savings up to 25%. Fast shipping from 13 distribution centers across the US & Canada."
+>
+  <Hero />
+  <TrustBadges />
+  <VehicleGrid />
+  <PreferredCustomerCard />
+  <CategoryGrid />
+  <WholesaleB2B />
+</Layout>

@@ -1,0 +1,119 @@
+---
+const productCategories = [
+  {
+    title: 'Synthetic Motor Oils',
+    description: 'Signature Series, OE & XL synthetic formulas engineered for up to 25,000 miles or 1 year of wear protection.',
+    image: '/images/products/16-product-motor-oils.avif',
+    href: '/go/motor-oil'
+  },
+  {
+    title: 'Synthetic Transmission Fluids',
+    description: 'Automatic, CVT, dual-clutch, and manual transmission fluids for smooth shifting and extreme heat protection.',
+    image: '/images/products/17-product-transmission-fluids.avif',
+    href: '/go/transmission-fluid'
+  },
+  {
+    title: 'Filtration & By-Pass Systems',
+    description: 'Ea® nanofiber oil and air filters filtering 99% of contaminants down to 20 microns.',
+    image: '/images/products/18-product-filtration.avif',
+    href: '/go/filtration'
+  },
+  {
+    title: 'Fuel Additives & Cleaners',
+    description: 'P.i.® Performance Improver, Quickshot®, and Diesel All-in-One for clean fuel injectors and maximum fuel economy.',
+    image: '/images/products/19-product-fuel-additives.avif',
+    href: '/go/fuel-additives'
+  },
+  {
+    title: 'Severe Gear® Lubes',
+    description: 'Engineered for extreme pressure, high towing loads, and off-road differentials without shearing.',
+    image: '/images/products/23-product-gear-lubes.avif',
+    href: '/go/gear-lube'
+  },
+  {
+    title: 'Synthetic Greases',
+    description: 'Heavy-duty, high-temperature, and water-resistant synthetic greases for chassis, wheel bearings, and racing.',
+    image: '/images/products/20-product-greases.avif',
+    href: '/go/grease'
+  },
+  {
+    title: 'Hydraulic Oils',
+    description: 'Commercial hydraulic fluids reducing pump wear, sludge, and thermal breakdown in extreme operating conditions.',
+    image: '/images/products/21-product-hydraulic-oils.avif',
+    href: '/go/hydraulic-oil'
+  },
+  {
+    title: 'Compressor Oils',
+    description: 'Long-life synthetic compressor oils designed to control foaming, prevent carbon build-up, and extend service life.',
+    image: '/images/products/25-product-compressor-oils.avif',
+    href: '/go/compressor-oil'
+  }
+];
+---
+
+<section class="py-16 bg-slate-950 border-b border-slate-800">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <div class="text-xs font-bold uppercase tracking-widest text-red-500 mb-2">
+          Product Categories
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-['Montserrat']">
+          PROFESSIONAL SYNTHETIC LUBRICANTS
+        </h2>
+        <p class="text-sm text-slate-400 mt-2 max-w-xl">
+          Factory-sealed AMSOIL lubricants and fluids formulated without petroleum fillers for unmatched performance under extreme friction and temperature.
+        </p>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <a 
+          href="/go/all" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center space-x-1 text-sm font-bold text-red-500 hover:text-red-400 underline underline-offset-4"
+        >
+          <span>View All 500+ AMSOIL Products</span>
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {productCategories.map(p => (
+        <a 
+          href={p.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-slate-900/90 rounded-2xl border border-slate-800 p-5 hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-red-950/20 hover:-translate-y-1 flex flex-col justify-between"
+        >
+          <div>
+            <div class="aspect-4/3 w-full rounded-xl overflow-hidden bg-slate-950/80 mb-4 p-2 flex items-center justify-center border border-slate-800/60">
+              <img 
+                src={p.image} 
+                alt={p.title} 
+                class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-bold text-white text-base group-hover:text-red-400 transition-colors font-['Montserrat']">
+              {p.title}
+            </h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              {p.description}
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold">
+            <span class="text-slate-300 group-hover:text-white">Shop Catalog</span>
+            <span class="text-red-500 group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>

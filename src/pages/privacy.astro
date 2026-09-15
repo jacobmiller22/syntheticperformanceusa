@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { dealerConfig } from '../config/dealer';
+---
+
+<Layout 
+  title={`Privacy Policy & Affiliate Disclosure | ${dealerConfig.businessName}`}
+  description={`Privacy policy and dealer affiliate disclosure for ${dealerConfig.businessName}.`}
+>
+  <div class="py-16 bg-slate-950 border-b border-slate-800">
+    <div class="container mx-auto px-4 max-w-3xl space-y-6 text-sm text-slate-300 leading-relaxed">
+      <h1 class="text-3xl font-extrabold text-white font-['Montserrat']">Privacy Policy &amp; Affiliate Disclosure</h1>
+      <p class="text-xs text-slate-500">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+      <section class="space-y-3 pt-4">
+        <h2 class="text-lg font-bold text-white">1. Authorized Dealer &amp; Affiliate Disclosure</h2>
+        <p>
+          {dealerConfig.dealerName} is an Independent Authorized Dealer of AMSOIL INC. products (ZO #{dealerConfig.zoNumber}). This website functions as an informational and referral platform directing visitors to official AMSOIL INC. purchasing channels. When you click links on this website and make a purchase on amsoil.com, the dealer may receive commission credits as an independent contractor under the AMSOIL marketing plan.
+        </p>
+      </section>
+
+      <section class="space-y-3 pt-4">
+        <h2 class="text-lg font-bold text-white">2. No Payment Processing on this Site</h2>
+        <p>
+          This website does NOT collect, store, or process credit cards, bank accounts, or sensitive billing data. All product purchases, shopping cart checkouts, and customer account registrations are conducted exclusively on the official, 256-bit SSL encrypted AMSOIL INC. website at <a href="https://www.amsoil.com" target="_blank" rel="noopener noreferrer" class="text-red-400 hover:underline">amsoil.com</a>.
+        </p>
+      </section>
+
+      <section class="space-y-3 pt-4">
+        <h2 class="text-lg font-bold text-white">3. Cookies and Tracking Technologies</h2>
+        <p>
+          When you click links to amsoil.com, AMSOIL places a standard browser cookie to attribute referral credit to Dealer ZO #{dealerConfig.zoNumber}. This website itself may use basic edge performance caching and anonymous aggregated web analytics to measure page views and ensure fast loading speeds.
+        </p>
+      </section>
+
+      <section class="space-y-3 pt-4">
+        <h2 class="text-lg font-bold text-white">4. Contact Information</h2>
+        <p>
+          If you have questions regarding this privacy policy or wish to contact the independent dealership directly, you may reach out via:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-slate-400">
+          <li>Name: {dealerConfig.dealerName}</li>
+          <li>Dealer Number: ZO #{dealerConfig.zoNumber}</li>
+          <li>Phone: <a href={`tel:${dealerConfig.phone}`} class="text-red-400">{dealerConfig.phone}</a></li>
+          <li>Email: <a href={`mailto:${dealerConfig.email}`} class="text-red-400">{dealerConfig.email}</a></li>
+        </ul>
+      </section>
+
+      <section class="space-y-3 pt-4">
+        <h2 class="text-lg font-bold text-white">5. Trademark Disclaimer</h2>
+        <p class="text-xs text-slate-400">
+          AMSOIL™, The First In Synthetics®, Signature Series®, Severe Gear®, Ea®, and related product names are registered trademarks of AMSOIL INC., Superior, WI. All rights reserved.
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>

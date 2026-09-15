@@ -1,0 +1,24 @@
+# Cloudflare Workers Configuration for Brandon's AMSOIL Dealer Site
+name = "brandonamsoil"
+main = "worker/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Custom Domain Route on jacobmiller22.com Zone
+routes = [
+  { pattern = "brandonsoil.jacobmiller22.com/*", zone_id = "5d7e44ca52908e077d3808080930bd69" }
+]
+
+# Static Assets served directly from Cloudflare's Edge CDN
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "404-page"
+
+# Dealer Variables (Dynamically editable anytime without rebuilding frontend)
+[vars]
+DEALER_ZO = "1234567"
+DEALER_NAME = "Brandon Miller"
+DEALER_PHONE = "(555) 321-4567"
+DEALER_EMAIL = "brandon@brandonsoil.jacobmiller22.com"
+DEALER_LOCATION = "Serving Customers Nationwide"
