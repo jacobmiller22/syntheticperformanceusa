@@ -1,0 +1,8 @@
+# Local Cloudflare Worker Environment Variables (DO NOT COMMIT SENSITIVE VALUES TO GIT)
+# Copy this file to .dev.vars for local wrangler development
+
+DEALER_ZO=1234567
+DEALER_NAME="Brandon Miller"
+DEALER_PHONE="(555) 321-4567"
+DEALER_EMAIL="brandon@brandonsoil.jacobmiller22.com"
+DEALER_LOCATION="Serving Customers Nationwide"
