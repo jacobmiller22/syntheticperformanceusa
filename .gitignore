@@ -8,6 +8,8 @@ dist/
 build/
 out/
 *.tsbuildinfo
+test-results/
+playwright-report/
 
 # Cloudflare & Wrangler Secrets/Caches
 .wrangler/

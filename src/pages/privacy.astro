@@ -22,7 +22,7 @@ import { dealerConfig } from '../config/dealer';
       <section class="space-y-3 pt-4">
         <h2 class="text-lg font-bold text-white">2. No Payment Processing on this Site</h2>
         <p>
-          This website does NOT collect, store, or process credit cards, bank accounts, or sensitive billing data. All product purchases, shopping cart checkouts, and customer account registrations are conducted exclusively on the official, 256-bit SSL encrypted AMSOIL INC. website at <a href="https://www.amsoil.com" target="_blank" rel="noopener noreferrer" class="text-red-400 hover:underline">amsoil.com</a>.
+          This website does NOT collect, store, or process credit cards, bank accounts, or sensitive billing data. All product purchases, shopping cart checkouts, and customer account registrations are conducted exclusively on the official, 256-bit SSL encrypted AMSOIL INC. website at <a href="/go" target="_blank" rel="noopener noreferrer" class="text-red-400 hover:underline">amsoil.com</a>.
         </p>
       </section>
 
@@ -42,7 +42,7 @@ import { dealerConfig } from '../config/dealer';
           <li>Name: {dealerConfig.dealerName}</li>
           <li>Dealer Number: ZO #{dealerConfig.zoNumber}</li>
           <li>Phone: <a href={`tel:${dealerConfig.phone}`} class="text-red-400">{dealerConfig.phone}</a></li>
-          <li>Email: <a href={`mailto:${dealerConfig.email}`} class="text-red-400">{dealerConfig.email}</a></li>
+          <li>Email: <a href={`mailto:${dealerConfig.email}`} class="text-red-400 break-all">{dealerConfig.email}</a></li>
         </ul>
       </section>
 
