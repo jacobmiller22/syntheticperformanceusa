@@ -73,8 +73,10 @@ AMSOIL gives independent dealers extraordinary freedom, but they have strict pol
 
 ---
 
-## 5. Need to Change Your Phone, Email, or ZO Number?
+## 5. Need to Change Your Phone, Email, or Website Text?
 
-If your phone number, email address, or ZO number ever changes, just contact your site developer (Jacob). 
+You have two easy options:
 
-Because the site was built with a centralized modern configuration, updating your information takes less than 60 seconds and updates across every single page and link instantly!
+* **Option A (Self-Service)**: You can make changes yourself in under 2 minutes! Check out your step-by-step **[Content Editor Guide](CONTENT_EDITOR_GUIDE.md)**, which walks you through editing your phone number in `src/config/dealer.ts`, testing with live preview, and publishing.
+* **Option B (Contact Jacob)**: If you prefer, just contact your site developer (Jacob). Because the site was built with a centralized modern configuration, updating your information takes less than 60 seconds and updates across every single page and link instantly!
+

@@ -10,6 +10,7 @@
 
 * 🛠️ **[Developer Guide](docs/DEVELOPER_GUIDE.md)**: Architecture, local setup, Cloudflare deployment, and edge routing.
 * 📖 **[Dealer Handbook](docs/DEALER_HANDBOOK.md)**: Non-technical manual for Brandon on how the site makes money, AMSOIL G4000 rules, and marketing tips.
+* 🔧 **[Content Editor Guide](docs/CONTENT_EDITOR_GUIDE.md)**: Brandon's step-by-step field manual for editing text, replacing images, and publishing updates.
 * 📋 **[Pending Configuration & TODOs](docs/PENDING_CONFIG.md)**: Tracker for remaining placeholder values and pending dealer assets.
 
 ---
