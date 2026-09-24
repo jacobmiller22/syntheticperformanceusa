@@ -6,7 +6,7 @@ compatibility_flags = ["nodejs_compat"]
 
 # Custom Domain Route on jacobmiller22.com Zone
 routes = [
-  { pattern = "brandonsoil.jacobmiller22.com/*", zone_id = "5d7e44ca52908e077d3808080930bd69" }
+  { pattern = "syntheticperformanceusa.com//*", zone_id = "5d7e44ca52908e077d3808080930bd69" }
 ]
 
 # Static Assets served directly from Cloudflare's Edge CDN
@@ -19,6 +19,5 @@ not_found_handling = "404-page"
 [vars]
 DEALER_ZO = "31977476"
 DEALER_NAME = "Brandon Miller"
-DEALER_PHONE = "(555) 321-4567"
-DEALER_EMAIL = "brandon@brandonsoil.jacobmiller22.com"
+DEALER_EMAIL = "syntheticperformanceusa@gmail.com/"
 DEALER_LOCATION = "Serving Customers Nationwide"

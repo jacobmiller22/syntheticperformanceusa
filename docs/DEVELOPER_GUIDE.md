@@ -1,6 +1,6 @@
 # Developer Guide: AMSOIL Authorized Dealer Platform
 
-This document is the complete technical reference for developing, maintaining, and deploying Brandon's AMSOIL Authorized Dealer platform (`brandonsoil.jacobmiller22.com`).
+This document is the complete technical reference for developing, maintaining, and deploying Brandon's AMSOIL Authorized Dealer platform (`syntheticperformanceusa.com/`).
 
 ---
 
@@ -9,7 +9,7 @@ This document is the complete technical reference for developing, maintaining, a
 The platform is designed around **speed, security, and zero ongoing maintenance**:
 
 ```
-[ User visits brandonsoil.jacobmiller22.com ]
+[ User visits syntheticperformanceusa.com/ ]
                       │
                       ▼
         Cloudflare Workers Edge Network
@@ -24,6 +24,7 @@ Served from Cloudflare CDN  from Worker Environment
 ```
 
 ### Why this architecture has zero maintenance:
+
 1. **No Scraping Pipeline**: Product specs, pricing tiers, and stock status change constantly on `amsoil.com`. By delegating product pages and vehicle lookups to `amsoil.com` through deep links, we never have broken scrapers, blocked IP addresses, or pricing drift.
 2. **No Database Dependencies**: There is no SQL database, D1 schema, or ORM to migrate or corrupt.
 3. **No External Client-Side API Keys**: No Stripe keys, no CMS APIs, no third-party endpoints that expire or rate-limit.
@@ -83,9 +84,10 @@ Served from Cloudflare CDN  from Worker Environment
 ## 3. Local Development
 
 ### Prerequisites
-* Node.js v20+ (tested on Node v24)
-* pnpm v9+ (tested on pnpm v12)
-* Wrangler CLI (included in `devDependencies`)
+
+- Node.js v20+ (tested on Node v24)
+- pnpm v9+ (tested on pnpm v12)
+- Wrangler CLI (included in `devDependencies`)
 
 ### Commands
 
@@ -115,19 +117,22 @@ npx wrangler dev
 The Worker script in [`worker/index.ts`](file:///Users/jacobmiller22/projects/brandonamsoil/worker/index.ts) intercepts any request beginning with `/go/`:
 
 ### 1. Predefined Clean Routes
-* `/go/lookup` &rarr; `https://www.amsoil.com/guides/?zo=${DEALER_ZO}`
-* `/go/save25` &rarr; `https://www.amsoil.com/offers/pc/?zo=${DEALER_ZO}`
-* `/go/all` &rarr; `https://www.amsoil.com/c/products/1/?zo=${DEALER_ZO}`
-* `/go/motor-oil` &rarr; `https://www.amsoil.com/shop/by-product/motor-oil/?zo=${DEALER_ZO}`
-* `/go/auto-truck` &rarr; `https://www.amsoil.com/c/car-truck/104/?zo=${DEALER_ZO}`
-* `/go/dealer` &rarr; `https://www.amsoil.com/become-a-dealer/?zo=${DEALER_ZO}`
-* `/go/commercial` &rarr; `https://www.amsoil.com/business-opportunities/commercial-accounts/?zo=${DEALER_ZO}`
-* `/go/retail` &rarr; `https://www.amsoil.com/account-application/retail/?zo=${DEALER_ZO}`
+
+- `/go/lookup` &rarr; `https://www.amsoil.com/guides/?zo=${DEALER_ZO}`
+- `/go/save25` &rarr; `https://www.amsoil.com/offers/pc/?zo=${DEALER_ZO}`
+- `/go/all` &rarr; `https://www.amsoil.com/c/products/1/?zo=${DEALER_ZO}`
+- `/go/motor-oil` &rarr; `https://www.amsoil.com/shop/by-product/motor-oil/?zo=${DEALER_ZO}`
+- `/go/auto-truck` &rarr; `https://www.amsoil.com/c/car-truck/104/?zo=${DEALER_ZO}`
+- `/go/dealer` &rarr; `https://www.amsoil.com/become-a-dealer/?zo=${DEALER_ZO}`
+- `/go/commercial` &rarr; `https://www.amsoil.com/business-opportunities/commercial-accounts/?zo=${DEALER_ZO}`
+- `/go/retail` &rarr; `https://www.amsoil.com/account-application/retail/?zo=${DEALER_ZO}`
 
 ### 2. Custom Destination Queries (`/go?to=...`)
+
 You can link to any page on `amsoil.com` by passing a `to` parameter:
-* `/go?to=/c/marine/111/`
-* `/go?to=https://www.amsoil.com/p/amsoil-signature-series-5w-30-synthetic-motor-oil-asl/`
+
+- `/go?to=/c/marine/111/`
+- `/go?to=https://www.amsoil.com/p/amsoil-signature-series-5w-30-synthetic-motor-oil-asl/`
 
 **Open Redirect Protection**: The worker validates that the destination strictly begins with `/` or has a hostname ending in `amsoil.com`. Any malicious external redirect attempts will be rejected with HTTP 400.
 
@@ -138,6 +143,7 @@ You can link to any page on `amsoil.com` by passing a `to` parameter:
 You can change Brandon's ZO number, phone, or name in **three ways**:
 
 ### Method A: Cloudflare Dashboard (Recommended)
+
 1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/) &rarr; **Workers & Pages**.
 2. Click on **`brandonamsoil`**.
 3. Go to **Settings** &rarr; **Variables and Secrets**.
@@ -145,35 +151,38 @@ You can change Brandon's ZO number, phone, or name in **three ways**:
 5. Click **Deploy**. All `/go/*` outbound links instantly route with the new dealer number!
 
 ### Method B: Via Wrangler CLI
+
 ```bash
 # Update the environment variable
 CLOUDFLARE_API_TOKEN="<token>" npx wrangler secret put DEALER_ZO
 ```
 
 ### Method C: In `wrangler.toml`
+
 Update the `[vars]` block and deploy:
+
 ```toml
 [vars]
 DEALER_ZO = "7654321"
 DEALER_NAME = "Brandon Miller"
-DEALER_PHONE = "(555) 321-4567"
 ```
 
 ---
 
 ## 6. Cloudflare Deployment Reference
 
-* **Cloudflare Account ID**: `6290c7cd5d9834b6f16e06b4ed67e663`
-* **Cloudflare Zone ID**: `5d7e44ca52908e077d3808080930bd69` (`jacobmiller22.com`)
-* **Target Domain**: `brandonsoil.jacobmiller22.com`
-* **Wrangler Route**:
+- **Cloudflare Account ID**: `6290c7cd5d9834b6f16e06b4ed67e663`
+- **Cloudflare Zone ID**: `5d7e44ca52908e077d3808080930bd69` (`jacobmiller22.com`)
+- **Target Domain**: `syntheticperformanceusa.com/`
+- **Wrangler Route**:
   ```toml
   routes = [
-    { pattern = "brandonsoil.jacobmiller22.com/*", zone_id = "5d7e44ca52908e077d3808080930bd69" }
+    { pattern = "syntheticperformanceusa.com//*", zone_id = "5d7e44ca52908e077d3808080930bd69" }
   ]
   ```
 
 ### Deployment Command
+
 ```bash
 export CLOUDFLARE_API_TOKEN="<YOUR_TOKEN>"
 export CLOUDFLARE_ACCOUNT_ID="6290c7cd5d9834b6f16e06b4ed67e663"
@@ -188,6 +197,7 @@ npx wrangler deploy
 ## 7. Adding New Categories or Outbound Routes
 
 To add a new friendly redirect route (e.g. `/go/racing`):
+
 1. Open [`worker/index.ts`](file:///Users/jacobmiller22/projects/brandonamsoil/worker/index.ts).
 2. Add the route key and target AMSOIL URL to `ROUTE_MAP`:
    ```typescript

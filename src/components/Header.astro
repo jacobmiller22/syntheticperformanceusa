@@ -1,81 +1,112 @@
 ---
-import { dealerConfig } from '../config/dealer';
+import { dealerConfig } from "../config/dealer";
 
 interface Props {
   currentPath?: string;
 }
 
-const { currentPath = '/' } = Astro.props;
+const { currentPath = "/" } = Astro.props;
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Shop by Vehicle', href: '/shop-by-vehicle' },
-  { name: 'Save 25% (PC)', href: '/preferred-customer' },
-  { name: 'Become a Dealer', href: '/become-a-dealer' },
-  { name: 'Commercial & Fleet', href: '/commercial-wholesale' },
-  { name: 'About', href: '/about' },
+  { name: "Home", href: "/" },
+  { name: "Shop by Vehicle", href: "/shop-by-vehicle" },
+  { name: "Save 25% (PC)", href: "/preferred-customer" },
+  { name: "Become a Dealer", href: "/become-a-dealer" },
+  { name: "Commercial & Fleet", href: "/commercial-wholesale" },
+  { name: "About", href: "/about" },
 ];
 ---
 
 <!-- Top Announcement Bar -->
-<div class="bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white text-xs md:text-sm font-semibold py-2 px-4 text-center shadow-inner tracking-wide">
-  <div class="container mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-    <span class="inline-block bg-white text-red-700 text-[10px] font-black uppercase px-2 py-0.5 rounded-full">Save Up To 25%</span>
-    <span>Join the Preferred Customer Program for $10 &amp; Get Free Shipping on $100+ Orders</span>
-    <a href="/go/save25" class="underline hover:text-red-100 font-bold ml-1 hidden sm:inline">Learn More &rarr;</a>
+<div
+  class="bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white text-xs md:text-sm font-semibold py-2 px-4 text-center shadow-inner tracking-wide"
+>
+  <div
+    class="container mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1"
+  >
+    <span
+      class="inline-block bg-white text-red-700 text-[10px] font-black uppercase px-2 py-0.5 rounded-full"
+      >Save Up To 25%</span
+    >
+    <span
+      >Join the Preferred Customer Program for $10 &amp; Get Free Shipping on
+      $100+ Orders</span
+    >
+    <a
+      href="/go/save25"
+      class="underline hover:text-red-100 font-bold ml-1 hidden sm:inline"
+      >Learn More &rarr;</a
+    >
   </div>
 </div>
 
 <!-- Main Navigation Header -->
-<header class="sticky top-0 z-50 glass-nav border-b border-slate-800 transition-all duration-300">
+<header
+  class="sticky top-0 z-50 glass-nav border-b border-slate-800 transition-all duration-300"
+>
   <div class="container mx-auto px-4 lg:px-8">
     <div class="flex items-center justify-between h-20">
-      
       <!-- Brand Logo & Authorized Dealer Title -->
       <a href="/" class="flex items-center space-x-3 group">
-        <img 
-          src="/images/34-amsoil-logo-main.avif" 
-          alt="AMSOIL" 
+        <img
+          src="/images/34-amsoil-logo-main.avif"
+          alt="AMSOIL"
           class="h-9 md:h-11 w-auto transition-transform duration-200 group-hover:scale-105"
         />
         <div class="border-l border-slate-700 pl-3">
-          <div class="text-[11px] uppercase tracking-widest text-red-500 font-bold">Authorized Dealer</div>
-          <div class="text-xs text-slate-300 font-medium">{dealerConfig.businessName}</div>
+          <div
+            class="text-[11px] uppercase tracking-widest text-red-500 font-bold"
+          >
+            Authorized Dealer
+          </div>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-300">
-        {navLinks.map(link => (
-          <a 
-            href={link.href}
-            class={`transition-colors duration-150 hover:text-white ${currentPath === link.href ? 'text-red-500 font-semibold' : ''}`}
-          >
-            {link.name}
-          </a>
-        ))}
+      <nav
+        class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-300"
+      >
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class={`transition-colors duration-150 hover:text-white ${currentPath === link.href ? "text-red-500 font-semibold" : ""}`}
+            >
+              {link.name}
+            </a>
+          ))
+        }
       </nav>
 
       <!-- Right Action CTA Buttons -->
       <div class="hidden sm:flex items-center space-x-3">
         <!-- Official Vehicle Lookup Button -->
-        <a 
+        <a
           href="/go/lookup"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-slate-100 px-3.5 py-2 rounded-lg text-xs font-semibold border border-slate-700 transition duration-150 shadow-sm"
           title="Lookup oil and filters by vehicle make, model and year"
         >
-          <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          <svg
+            class="w-4 h-4 text-red-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span>Vehicle Lookup</span>
         </a>
 
         <!-- Sign In Button linking to amsoil.com -->
-        <a 
-          href="/go/login" 
-          target="_blank" 
+        <a
+          href="/go/login"
+          target="_blank"
           rel="noopener noreferrer"
           class="text-xs font-medium text-slate-400 hover:text-white px-2 py-2"
         >
@@ -83,9 +114,9 @@ const navLinks = [
         </a>
 
         <!-- Primary Shop CTA -->
-        <a 
-          href="/go/all" 
-          target="_blank" 
+        <a
+          href="/go/all"
+          target="_blank"
           rel="noopener noreferrer"
           class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-150 shadow-md shadow-red-950/40 hover:shadow-red-900/50"
         >
@@ -94,70 +125,102 @@ const navLinks = [
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button 
+      <button
         id="mobile-menu-button"
         class="xl:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500"
         aria-label="Toggle navigation menu"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            id="hamburger-icon"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+          <path
+            id="close-icon"
+            class="hidden"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
-
     </div>
   </div>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-slate-900/98 border-b border-slate-800 px-6 pt-4 pb-6 space-y-4">
+  <div
+    id="mobile-menu"
+    class="hidden xl:hidden bg-slate-900/98 border-b border-slate-800 px-6 pt-4 pb-6 space-y-4"
+  >
     <nav class="flex flex-col space-y-3 text-base font-medium">
-      {navLinks.map(link => (
-        <a 
-          href={link.href}
-          class={`py-2 px-3 rounded-md transition-colors ${currentPath === link.href ? 'bg-red-600/20 text-red-400 font-bold' : 'text-slate-200 hover:bg-slate-800'}`}
-        >
-          {link.name}
-        </a>
-      ))}
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`py-2 px-3 rounded-md transition-colors ${currentPath === link.href ? "bg-red-600/20 text-red-400 font-bold" : "text-slate-200 hover:bg-slate-800"}`}
+          >
+            {link.name}
+          </a>
+        ))
+      }
     </nav>
     <div class="pt-4 border-t border-slate-800 flex flex-col space-y-3">
-      <a 
-        href="/go/lookup" 
-        target="_blank" 
+      <a
+        href="/go/lookup"
+        target="_blank"
         rel="noopener noreferrer"
         class="flex items-center justify-center space-x-2 bg-slate-800 text-white py-2.5 rounded-lg font-semibold text-sm"
       >
-        <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        <svg
+          class="w-4 h-4 text-red-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
         </svg>
         <span>Lookup Vehicle by Make/Model</span>
       </a>
-      <a 
-        href="/go/all" 
-        target="_blank" 
+      <a
+        href="/go/all"
+        target="_blank"
         rel="noopener noreferrer"
         class="bg-red-600 text-white text-center py-2.5 rounded-lg font-bold text-sm tracking-wide"
       >
         Shop All AMSOIL Products
       </a>
       <div class="text-center text-xs text-slate-400 pt-1">
-        Questions? Call Brandon: <a href={`tel:${dealerConfig.phone}`} class="text-slate-200 font-semibold">{dealerConfig.phone}</a>
+        Questions? Email Us: <a
+          href={`email:${dealerConfig.email}`}
+          class="text-slate-200 font-semibold">{dealerConfig.email}</a
+        >
       </div>
     </div>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
-  const closeIcon = document.getElementById('close-icon');
+  const btn = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
 
   if (btn && menu && hamburgerIcon && closeIcon) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      hamburgerIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      hamburgerIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
     });
   }
 </script>

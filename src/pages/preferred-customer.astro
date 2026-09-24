@@ -1,53 +1,63 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PreferredCustomerCard from '../components/PreferredCustomerCard.astro';
-import TrustBadges from '../components/TrustBadges.astro';
-import { dealerConfig } from '../config/dealer';
+import Layout from "../layouts/Layout.astro";
+import PreferredCustomerCard from "../components/PreferredCustomerCard.astro";
+import TrustBadges from "../components/TrustBadges.astro";
+import { dealerConfig } from "../config/dealer";
 
 const faqs = [
   {
     q: "How does the Preferred Customer (P.C.) program work?",
-    a: "Preferred Customers purchase AMSOIL products at wholesale pricing—saving up to 25% off regular retail. Membership is just $10 for 6 months or $20 for a full year. There are no minimum order quantities or purchasing quotas."
+    a: "Preferred Customers purchase AMSOIL products at wholesale pricing—saving up to 25% off regular retail. Membership is just $10 for 6 months or $20 for a full year. There are no minimum order quantities or purchasing quotas.",
   },
   {
     q: "Does my membership pay for itself?",
-    a: "Yes, immediately. Because you save up to 25% on every item and get free shipping on orders over $100, the $10 membership fee is typically recouped on your very first oil change or order of motor oil and filters."
+    a: "Yes, immediately. Because you save up to 25% on every item and get free shipping on orders over $100, the $10 membership fee is typically recouped on your very first oil change or order of motor oil and filters.",
   },
   {
     q: "How does free shipping work?",
-    a: "Orders over $100 for Preferred Customers in the contiguous US qualify for free standard ground shipping. Most orders arrive within 1 to 2 business days because AMSOIL ships from 13 regional distribution centers."
+    a: "Orders over $100 for Preferred Customers in the contiguous US qualify for free standard ground shipping. Most orders arrive within 1 to 2 business days because AMSOIL ships from 13 regional distribution centers.",
   },
   {
     q: "What are P.C. Rewards points?",
-    a: "You earn $5 back for every $100 you spend in AMSOIL products. In addition, AMSOIL sends you a $5 Birthday coupon every year, and if you spend $500 or more in a membership year, your renewal for the next year is completely free!"
+    a: "You earn $5 back for every $100 you spend in AMSOIL products. In addition, AMSOIL sends you a $5 Birthday coupon every year, and if you spend $500 or more in a membership year, your renewal for the next year is completely free!",
   },
   {
     q: "Can I sign up and order at the same time?",
-    a: "Yes! When you click 'Join Now', you can add the Preferred Customer membership directly to your shopping cart on amsoil.com. The 25% wholesale discount will immediately apply to all other products in that same cart."
-  }
+    a: "Yes! When you click 'Join Now', you can add the Preferred Customer membership directly to your shopping cart on amsoil.com. The 25% wholesale discount will immediately apply to all other products in that same cart.",
+  },
 ];
 ---
 
-<Layout 
-  title={`AMSOIL Preferred Customer | Save 25% Wholesale | ${dealerConfig.businessName}`}
+<Layout
+  title={`AMSOIL Preferred Customer | Save 25% Wholesale`}
   description="Join the AMSOIL Preferred Customer program for just $10. Save up to 25% on all synthetic oils, get free shipping on orders over $100, and earn rewards."
 >
   <!-- Hero Section -->
-  <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 border-b border-slate-800 text-center">
+  <div
+    class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 border-b border-slate-800 text-center"
+  >
     <div class="container mx-auto px-4 max-w-3xl">
-      <div class="inline-flex items-center space-x-2 bg-amber-400/10 border border-amber-400/30 rounded-full px-3 py-1 text-xs text-amber-400 font-bold uppercase tracking-wider mb-4">
+      <div
+        class="inline-flex items-center space-x-2 bg-amber-400/10 border border-amber-400/30 rounded-full px-3 py-1 text-xs text-amber-400 font-bold uppercase tracking-wider mb-4"
+      >
         <span>★</span>
         <span>Wholesale Club Pricing</span>
       </div>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-['Montserrat'] leading-tight">
+      <h1
+        class="text-3xl sm:text-5xl font-extrabold text-white font-['Montserrat'] leading-tight"
+      >
         Save Up To 25% On All AMSOIL Products
       </h1>
       <p class="text-sm sm:text-base text-slate-400 mt-4 leading-relaxed">
-        The smartest way to purchase high-performance synthetic lubricants. Unlock wholesale factory pricing, free shipping perks, and customer loyalty rewards.
+        The smartest way to purchase high-performance synthetic lubricants.
+        Unlock wholesale factory pricing, free shipping perks, and customer
+        loyalty rewards.
       </p>
-      
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a 
+
+      <div
+        class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
+        <a
           href="/go/save25"
           target="_blank"
           rel="noopener noreferrer"
@@ -66,7 +76,9 @@ const faqs = [
   <section class="py-16 bg-slate-950 border-b border-slate-800">
     <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
       <div class="text-center mb-12">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-['Montserrat']">
+        <h2
+          class="text-2xl sm:text-3xl font-extrabold text-white font-['Montserrat']"
+        >
           Frequently Asked Questions
         </h2>
         <p class="text-xs sm:text-sm text-slate-400 mt-2">
@@ -75,28 +87,35 @@ const faqs = [
       </div>
 
       <div class="space-y-4">
-        {faqs.map(faq => (
-          <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6">
-            <h3 class="text-base font-bold text-white font-['Montserrat'] flex items-center">
-              <span class="text-red-500 mr-2">Q:</span>
-              {faq.q}
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed pl-5">
-              {faq.a}
-            </p>
-          </div>
-        ))}
+        {
+          faqs.map((faq) => (
+            <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6">
+              <h3 class="text-base font-bold text-white font-['Montserrat'] flex items-center">
+                <span class="text-red-500 mr-2">Q:</span>
+                {faq.q}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed pl-5">
+                {faq.a}
+              </p>
+            </div>
+          ))
+        }
       </div>
 
-      <div class="mt-12 text-center p-8 bg-slate-900 rounded-2xl border border-slate-800">
-        <h3 class="text-xl font-bold text-white font-['Montserrat']">Ready to start saving 25%?</h3>
+      <div
+        class="mt-12 text-center p-8 bg-slate-900 rounded-2xl border border-slate-800"
+      >
+        <h3 class="text-xl font-bold text-white font-['Montserrat']">
+          Ready to start saving 25%?
+        </h3>
         <p class="text-xs text-slate-400 mt-1 max-w-md mx-auto">
-          Sign up today and get your wholesale pricing unlocked immediately on amsoil.com.
+          Sign up today and get your wholesale pricing unlocked immediately on
+          amsoil.com.
         </p>
-        <a 
-          href="/go/save25" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="/go/save25"
+          target="_blank"
+          rel="noopener noreferrer"
           class="mt-5 inline-block bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg"
         >
           Activate Membership on AMSOIL.com &rarr;

@@ -1,29 +1,39 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import WholesaleB2B from '../components/WholesaleB2B.astro';
-import TrustBadges from '../components/TrustBadges.astro';
-import { dealerConfig } from '../config/dealer';
+import Layout from "../layouts/Layout.astro";
+import WholesaleB2B from "../components/WholesaleB2B.astro";
+import TrustBadges from "../components/TrustBadges.astro";
+import { dealerConfig } from "../config/dealer";
 ---
 
-<Layout 
-  title={`Commercial & Retail Wholesale Accounts | ${dealerConfig.businessName}`}
+<Layout
+  title={`Commercial & Retail Wholesale Accounts`}
   description="Buy AMSOIL in bulk for commercial fleets or stock AMSOIL in your retail automotive shop. Save 30-40% off retail with dedicated business accounts."
 >
-  <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 border-b border-slate-800 text-center">
+  <div
+    class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 border-b border-slate-800 text-center"
+  >
     <div class="container mx-auto px-4 max-w-3xl">
-      <div class="inline-flex items-center space-x-2 bg-blue-600/20 border border-blue-600/40 rounded-full px-3 py-1 text-xs text-blue-400 font-bold uppercase tracking-wider mb-4">
+      <div
+        class="inline-flex items-center space-x-2 bg-blue-600/20 border border-blue-600/40 rounded-full px-3 py-1 text-xs text-blue-400 font-bold uppercase tracking-wider mb-4"
+      >
         <span>🏢</span>
         <span>Commercial &amp; Fleet Solutions</span>
       </div>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-['Montserrat'] leading-tight">
+      <h1
+        class="text-3xl sm:text-5xl font-extrabold text-white font-['Montserrat'] leading-tight"
+      >
         Wholesale Accounts for Fleets &amp; Retailers
       </h1>
       <p class="text-sm sm:text-base text-slate-400 mt-4 leading-relaxed">
-        Lower your operating costs, extend vehicle uptime, and protect valuable company assets with factory-direct commercial pricing and dedicated account support.
+        Lower your operating costs, extend vehicle uptime, and protect valuable
+        company assets with factory-direct commercial pricing and dedicated
+        account support.
       </p>
-      
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a 
+
+      <div
+        class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
+        <a
           href="/go/commercial"
           target="_blank"
           rel="noopener noreferrer"
@@ -31,7 +41,7 @@ import { dealerConfig } from '../config/dealer';
         >
           Commercial Fleet Account &rarr;
         </a>
-        <a 
+        <a
           href="/go/retail"
           target="_blank"
           rel="noopener noreferrer"
@@ -49,31 +59,45 @@ import { dealerConfig } from '../config/dealer';
   <section class="py-16 bg-slate-950 border-b border-slate-800">
     <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
       <div class="text-center mb-10">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-['Montserrat']">
+        <h2
+          class="text-2xl sm:text-3xl font-extrabold text-white font-['Montserrat']"
+        >
           How AMSOIL Reduces Fleet Operating Costs
         </h2>
         <p class="text-xs sm:text-sm text-slate-400 mt-2">
-          Fleet operators experience major bottom-line savings through three key mechanisms:
+          Fleet operators experience major bottom-line savings through three key
+          mechanisms:
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6">
-          <div class="text-xl font-bold text-red-500 font-['Montserrat'] mb-2">1. Extended Drains</div>
+          <div class="text-xl font-bold text-red-500 font-['Montserrat'] mb-2">
+            1. Extended Drains
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Cut oil changes by up to 50% or more without sacrificing engine protection. Fewer changes mean lower labor costs and less downtime.
+            Cut oil changes by up to 50% or more without sacrificing engine
+            protection. Fewer changes mean lower labor costs and less downtime.
           </p>
         </div>
         <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6">
-          <div class="text-xl font-bold text-blue-400 font-['Montserrat'] mb-2">2. Fuel Economy</div>
+          <div class="text-xl font-bold text-blue-400 font-['Montserrat'] mb-2">
+            2. Fuel Economy
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Uniform synthetic molecular structure reduces internal engine drag, delivering documented fuel economy gains across long highway miles.
+            Uniform synthetic molecular structure reduces internal engine drag,
+            delivering documented fuel economy gains across long highway miles.
           </p>
         </div>
         <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6">
-          <div class="text-xl font-bold text-emerald-400 font-['Montserrat'] mb-2">3. Component Life</div>
+          <div
+            class="text-xl font-bold text-emerald-400 font-['Montserrat'] mb-2"
+          >
+            3. Component Life
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Superior thermal stability protects turbochargers, cams, and bearings during heavy towing and extreme summer heat cycles.
+            Superior thermal stability protects turbochargers, cams, and
+            bearings during heavy towing and extreme summer heat cycles.
           </p>
         </div>
       </div>
