@@ -1,12 +1,14 @@
-# Cloudflare Workers Configuration for Brandon's AMSOIL Dealer Site
-name = "brandonamsoil"
+# Cloudflare Workers Configuration for Synthetic Performance USA (AMSOIL Dealer Site)
+name = "syntheticperformanceusa"
 main = "worker/index.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
-# Custom Domain Route on jacobmiller22.com Zone
+# Custom Domains for syntheticperformanceusa.com
+# Cloudflare automatically provisions DNS records and edge SSL certificates
 routes = [
-  { pattern = "syntheticperformanceusa.com//*", zone_id = "5d7e44ca52908e077d3808080930bd69" }
+  { pattern = "syntheticperformanceusa.com", custom_domain = true },
+  { pattern = "www.syntheticperformanceusa.com", custom_domain = true }
 ]
 
 # Static Assets served directly from Cloudflare's Edge CDN
@@ -19,5 +21,5 @@ not_found_handling = "404-page"
 [vars]
 DEALER_ZO = "31977476"
 DEALER_NAME = "Brandon Miller"
-DEALER_EMAIL = "syntheticperformanceusa@gmail.com/"
+DEALER_EMAIL = "syntheticperformanceusa@gmail.com"
 DEALER_LOCATION = "Serving Customers Nationwide"

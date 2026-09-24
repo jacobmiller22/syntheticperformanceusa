@@ -12,7 +12,8 @@
     "test": "pnpm run build && playwright test",
     "test:responsive": "pnpm run build && playwright test tests/responsiveness.spec.ts",
     "test:links": "pnpm run build && playwright test tests/dealer-links.spec.ts",
-    "deploy": "pnpm run build && wrangler deploy"
+    "deploy": "pnpm run build && wrangler deploy",
+    "deploy:prod": "./deploy.sh"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

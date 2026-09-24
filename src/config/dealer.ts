@@ -23,9 +23,9 @@ export const dealerConfig: DealerConfig = {
   zoNumber: "31977476",
   dealerName: "Brandon Miller",
   title: "AMSOIL Authorized Independent Dealer",
-  email: "syntheticperformanceusa@gmail.com/",
+  email: "syntheticperformanceusa@gmail.com",
   location: "Serving Customers Nationwide (US & Canada)",
-  siteUrl: "https://syntheticperformanceusa.com/",
+  siteUrl: "https://syntheticperformanceusa.com",
   tagline:
     "Save up to 25% on Factory-Direct AMSOIL Synthetic Lubricants & Filters",
   amsoilLinks: {

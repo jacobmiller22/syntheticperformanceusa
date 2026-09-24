@@ -2,12 +2,14 @@
 
 > High-performance, zero-maintenance AMSOIL Authorized Dealer web platform deployed on Cloudflare Workers with Static Assets.
 
-**Live Domain**: [`https://syntheticperformanceusa.com/`](https://syntheticperformanceusa.com/)
+**Production Domain**: [`https://syntheticperformanceusa.com`](https://syntheticperformanceusa.com)  
+**Preview / Subdomain**: [`https://www.syntheticperformanceusa.com`](https://www.syntheticperformanceusa.com)
 
 ---
 
 ## Quick Reference & Documentation
 
+- 🌐 **[Domain & DNS Setup Guide](docs/DOMAIN_DNS_SETUP.md)**: Cloudflare zone onboarding, nameservers, DNS records, SSL/TLS, and email forwarding.
 - 🛠️ **[Developer Guide](docs/DEVELOPER_GUIDE.md)**: Architecture, local setup, Cloudflare deployment, and edge routing.
 - 📖 **[Dealer Handbook](docs/DEALER_HANDBOOK.md)**: Non-technical manual for Brandon on how the site makes money, AMSOIL G4000 rules, and marketing tips.
 - 🔧 **[Content Editor Guide](docs/CONTENT_EDITOR_GUIDE.md)**: Brandon's step-by-step field manual for editing text, replacing images, and publishing updates.
@@ -25,7 +27,18 @@
 
 ---
 
-## Quick Start
+## Quick Start (Fresh Clone to Production)
+
+```bash
+# 1. Clone repository
+git clone <REPO_URL> brandonamsoil
+cd brandonamsoil
+
+# 2. Run the automated deployment script
+./deploy.sh
+```
+
+Or for local development:
 
 ```bash
 # Install dependencies
@@ -38,6 +51,6 @@ pnpm dev
 pnpm check
 pnpm build
 
-# Deploy to Cloudflare Workers
-CLOUDFLARE_API_TOKEN="<TOKEN>" npx wrangler deploy
+# Deploy directly via npm script
+pnpm run deploy:prod
 ```

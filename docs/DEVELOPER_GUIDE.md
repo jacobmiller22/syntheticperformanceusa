@@ -171,25 +171,32 @@ DEALER_NAME = "Brandon Miller"
 
 ## 6. Cloudflare Deployment Reference
 
-- **Cloudflare Account ID**: `6290c7cd5d9834b6f16e06b4ed67e663`
-- **Cloudflare Zone ID**: `5d7e44ca52908e077d3808080930bd69` (`jacobmiller22.com`)
-- **Target Domain**: `syntheticperformanceusa.com/`
-- **Wrangler Route**:
+* **Production Domain**: `syntheticperformanceusa.com` (and `www.syntheticperformanceusa.com`)
+* **Routing Mechanism**: Cloudflare Workers **Custom Domains** (`custom_domain = true`)
+* **Complete Setup Guide**: See [`docs/DOMAIN_DNS_SETUP.md`](DOMAIN_DNS_SETUP.md) for registrar nameserver delegation, DNS records, SSL/TLS Full (Strict), and free Cloudflare Email Routing.
+* **Wrangler Configuration** (`wrangler.toml`):
   ```toml
+  name = "syntheticperformanceusa"
+  main = "worker/index.ts"
+
   routes = [
-    { pattern = "syntheticperformanceusa.com//*", zone_id = "5d7e44ca52908e077d3808080930bd69" }
+    { pattern = "syntheticperformanceusa.com", custom_domain = true },
+    { pattern = "www.syntheticperformanceusa.com", custom_domain = true }
   ]
   ```
 
-### Deployment Command
-
+### Automated Deployment (Fresh Clone to Live)
 ```bash
-export CLOUDFLARE_API_TOKEN="<YOUR_TOKEN>"
-export CLOUDFLARE_ACCOUNT_ID="6290c7cd5d9834b6f16e06b4ed67e663"
+# Automated full pipeline (prerequisites, install, check, build, deploy)
+./deploy.sh
 
-# Build static assets & deploy worker
-pnpm run build
-npx wrangler deploy
+# Or run non-interactively in CI/CD:
+CLOUDFLARE_API_TOKEN="<YOUR_TOKEN>" ./deploy.sh
+```
+
+### Dry Run (Verify Build & Types without Deploying)
+```bash
+./deploy.sh --dry-run
 ```
 
 ---
